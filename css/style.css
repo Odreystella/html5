@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-color: #ccc;
 }
 body *, body *::before, body *::after{
     box-sizing: border-box;
@@ -8,9 +9,24 @@ body *, body *::before, body *::after{
     width: 940px;
     margin: 0 auto;
 }
+/* 헤더 */
 .header{
-    background-color: yellow;
-    height: 10vh;
+    background-color: #fff;
+    border-top: 1px solid transparent;
+    position: relative; 
+}
+/* 로고 */
+.logo{
+    margin: 0;
+    position: absolute; /*가장 가까운 요소에서 position:relative가 오프셋 기준이 됨*/
+    top: 45px;
+    left: 65px;
+    font-size: 100%;
+    line-height: 1; 
+}
+/* 안내링크 */
+.member{
+    margin: 0;
 }
 .visual{
     background-color: red;
