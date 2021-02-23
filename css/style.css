@@ -18,7 +18,10 @@ body *, body *::before, body *::after{
 }
 .main{
     background-color: blue;
-    padding: 30px 15px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: space-between;
     /* box-sizing: border-box; */
     /* width: 910px; */
     /* height: 60vh; */
@@ -28,28 +31,20 @@ body *, body *::before, body *::after{
 }
 /*css관점 플로트 해제 방법 2 
 가짜로 자식 앞 뒤로 만들 수 있음*/
-.main::after{
-    content: "";
-    display: block;
-    clear: both;
-}
 .group{
     height: 60vh;
-    margin: 0 15px;
 }
 .group1{
     background-color: violet;
-    float: left;
     width: 250px;
 }
 .group2{
     background-color: aquamarine;
     width: 380px;
-    float: left;
+    /* order: -1; 마크업한 순서 바꾸고 싶을 때*/
 }
 .group3{
     background-color: sandybrown;
-    float: left;
     width: 190px;
 }
 /* 마크업관점 플로트 해제 방법 1 
