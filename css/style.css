@@ -1,6 +1,9 @@
 body{
     margin: 0;
 }
+body *, body *::before, body *::after{
+    box-sizing: border-box;
+}
 .header, .visual, .main, .slogan, .footer-content{
     width: 940px;
     margin: 0 auto;
@@ -15,12 +18,24 @@ body{
 }
 .main{
     background-color: blue;
+    padding: 30px 15px;
+    /* box-sizing: border-box; */
+    /* width: 910px; */
     /* height: 60vh; */
-    border: 10px solid green;
-    overflow: hidden;
+    /* border: 10px solid green; */
+    /* overflow: hidden; */
+    /* float: left; */
+}
+/*css관점 플로트 해제 방법 2 
+가짜로 자식 앞 뒤로 만들 수 있음*/
+.main::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 .group{
     height: 60vh;
+    margin: 0 15px;
 }
 .group1{
     background-color: violet;
@@ -37,10 +52,21 @@ body{
     float: left;
     width: 190px;
 }
+/* 마크업관점 플로트 해제 방법 1 
+.clearfix{
+    clear: both;
+} */
 .slogan{
+    /* clear: both; */
     height: 10vh;
     background-color: green;
 }
+/* .slogan::before{
+    content: "첫번쨰 자식 요소 입니다.";
+}
+.slogan::after{
+    content: "마지막 자식 요소 입니다.";
+} */
 .footer{
     background-color: grey;
 }
