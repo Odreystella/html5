@@ -41,9 +41,9 @@ a{
     padding-left: 0;
     text-align: right;
     font-size: 0;
-    padding: 5px;
+    /* padding: 5px 0; */
     position: relative;
-    right: -10px;
+    /* right: -10px; */
     
 }
 .member li{
@@ -63,15 +63,15 @@ a{
     padding: 0 3px;
 }
 .visual{
-    background-color: red;
+    background-color: salmon;
     height: 10vh;
 }
 .main{
     background-color: blue;
     display: flex;
     flex-direction: row;
-    padding: 30px;
     justify-content: space-between;
+    padding: 30px;
     /* box-sizing: border-box; */
     /* width: 910px; */
     /* height: 60vh; */
@@ -87,15 +87,18 @@ a{
 .group1{
     background-color: violet;
     width: 250px;
+    /* float: left; */
 }
 .group2{
     background-color: aquamarine;
     width: 380px;
+    /* float: left; */
     /* order: -1; 마크업한 순서 바꾸고 싶을 때*/
 }
 .group3{
     background-color: sandybrown;
     width: 190px;
+    /* float: left; */
 }
 /* 마크업관점 플로트 해제 방법 1 
 .clearfix{
@@ -103,8 +106,8 @@ a{
 } */
 .slogan{
     /* clear: both; */
-    height: 10vh;
     background-color: green;
+    height: 10vh;
 }
 /* .slogan::before{
     content: "첫번쨰 자식 요소 입니다.";
@@ -113,9 +116,9 @@ a{
     content: "마지막 자식 요소 입니다.";
 } */
 .footer{
-    background-color: grey;
+    background-color: silver;
 }
 .footer-content{
-    background-color: salmon;
+    background-color: pink;
     height: 10vh;
 }
