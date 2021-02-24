@@ -89,7 +89,7 @@ a{
 /* 메인메뉴 */
 .menu{
     border-top: 2px solid #000; /*border라 상자 크기에 영향있음, box-shadow사용하면 됨)*/
-    /* box-shadow: 0 -2px 0 0 #000; offset x, offset y, blur, ? */
+    /* box-shadow: 0 -2px 0 0 #000; offset x, offset y, blur, spread, color */
     background: #ce4827 linear-gradient(to bottom, #eab22e 0%,#c96226 35%,#c96226 70%,#eab22e 100%);
     border-radius: /*0 0 30px 30px /*/ 0 0 5px 5px; /*x축 / y축*/   
     height: 47px;
@@ -167,7 +167,7 @@ a{
 .sub-menu a:hover::before{
     content: '\e800';
 } */
-.sub-menu a:hover, .sub-menu1 a:focus{
+.sub-menu a:hover, .sub-menu a:focus{
     color: #f00;
 }
 /* 비주얼 애니메이션 */
@@ -212,7 +212,7 @@ a{
     background-repeat: no-repeat;
     animation-name: bgAni;
     animation-duration: 2000ms;
-    animation-iteration-count: inherit;
+    animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 .visual::before{
