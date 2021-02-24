@@ -13,6 +13,12 @@
     clip: rect(0 0 0 0); /*하위 브라우저에서 사용하기 위해, position이 absolute일 때 사용 가능*/
     clip-path: polygon(0 0, 0 0, 0 0);  /*폴리곤 함수를 이용해 점 없애려고*/
 }
+/* 스타일 초기화 ul, ol 공통모듈, 스타일 초기화 하고 싶을 때 마크업에 적용 */
+.reset-list{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
 html{
     font-size: 10px;
 }
@@ -40,13 +46,13 @@ a{
     background-color: #fff;
     /* border-top: 1px solid transparent; */
     position: relative; 
-    padding: 0 30px;
+    padding: 0 30px 50px;
 }
 /* 로고 */
 .logo{
     margin: 0;
     position: absolute; /*가장 가까운 요소에서 position:relative가 오프셋 기준이 됨*/
-    top: 45px;
+    top: 41px;
     left: 65px;
     font-size: 100%;
     line-height: 1; 
@@ -74,10 +80,57 @@ a{
     display: inline-block;
     padding: 5px 10px;
     text-transform: uppercase;
-    
 }
 .divider{
     padding: 0 3px;
+}
+/* 메인메뉴 */
+.menu{
+    border-top: 2px solid #000; /*border라 상자 크기에 영향있음, box-shadow사용하면 됨)*/
+    /* box-shadow: 0 -2px 0 0 #000; offset x, offset y, blur, ? */
+    background: #ce4827 linear-gradient(to bottom, #eab22e 0%,#c96226 35%,#c96226 70%,#eab22e 100%);
+    border-radius: /*0 0 30px 30px /*/ 0 0 5px 5px; /*x축 / y축*/   
+    height: 47px;
+    padding-left: 225px;
+}
+.menu-item{
+    /* background-color: skyblue; */
+    float: left;
+    /* padding: 0 22px; */
+    border-left: 1px solid #fff;
+    line-height: 45px;
+}
+.menu-item-button{
+    padding: 2px 20px 0;
+    display: block;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+.menu-act .menu-item-button{
+    color: #ff0;
+    /* border-bottom: 2px solid #000; */
+}
+.menu-act .menu-item-button::after{
+    content:"";
+    display: block;
+    background-color:#000;
+    height: 2px;
+    margin-top: -2px;
+}
+/* .menu-item:first-child{
+     margin-left: 225px; 
+} */
+.sub-menu{
+    background: pink;
+    position: absolute;
+    display: none;
+}
+.sub-menu1{
+    display: block;
+    top: 0;
+    left: 0;    /*position이 header기준으로 영향받음*/
 }
 .visual{
     background-color: salmon;
@@ -89,6 +142,7 @@ a{
     flex-direction: row;
     justify-content: space-between;
     padding: 30px;
+    
     /* box-sizing: border-box; */
     /* width: 910px; */
     /* height: 60vh; */
@@ -96,6 +150,7 @@ a{
     /* overflow: hidden; */
     /* float: left; */
 }
+
 /*css관점 플로트 해제 방법 2 
 가짜로 자식 앞 뒤로 만들 수 있음*/
 .group{
