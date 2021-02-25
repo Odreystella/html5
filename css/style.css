@@ -3,7 +3,7 @@
 @import url(./normalize.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden{
+.a11y-hidden, legend{
     background-color: yellow;
     position: absolute; /*top, left등 값을 주면 제자리에 있음(초기값이 제자리) 이동할때만 값을 줌 */
     /* top: -9999px; */
@@ -290,6 +290,82 @@ a{
 .clearfix{
     clear: both;
 } */
+/* 로그인 */
+/* legend{
+    position: absolute;
+} */
+.login{
+    background: radial-gradient(circle at right top,  #eab22e 0%,#c96226 35%,#c96226 70%,#eab22e 100%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #aaa;
+    padding: 10px;
+}
+.login-heading{
+    /* background-color: #fff; */
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: yellow;
+    /* padding-left: 10px; */
+    text-indent: 10px; /*블럭요소 일때만 들여쓰기 가능, 음수 가능*/
+}
+.login-form{
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 10px 0 10px;
+    margin-top: 10px;
+    
+}
+.login-form fieldset{
+    margin: 0;
+    padding: 0 0 10px 0;
+    border: 0;
+    position: relative;
+    /* background-color: pink; */
+    border-bottom: 1px solid #aaa;
+
+}
+.user-pw{
+    margin-top: 6px;
+}
+.login-form label{
+    display: inline-block;
+    width: 50px;
+}
+.login-form input{
+    width: 90px;
+    height: 22px;
+    padding: 1px 1px 1px 5px;
+    border: 1px solid #aaa;
+}
+.btn-login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ce4827;
+    color: #fff;
+    padding: 0;
+    border:0;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+.member-service{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 0 0 5px 5px;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.member-service a{
+    display: inline-block;
+    padding: 5px 0;
+}
+.member-service .icon-right-open{
+    color: #ce4287;
+}
 .slogan{
     /* clear: both; */
     background-color: green;
