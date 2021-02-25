@@ -5,7 +5,7 @@
 /* 숨김 콘텐츠 */
 .a11y-hidden, legend{
     background-color: yellow;
-    position: absolute; /*top, left등 값을 주면 제자리에 있음(초기값이 제자리) 이동할때만 값을 줌 */
+    position: absolute; /*top, left등 설정안하면 제자리(마크업 순서)에 있음(default가 제자리) 이동할때만 좌표 줌 */
     /* top: -9999px; */
     width: 1px;
     height: 1px; 
@@ -32,7 +32,7 @@ body{
     /* background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc linear-gradient(180deg, #ccc 0%, #eee 30%, #fff 50%, #fff 100%) repeat 0 0; */
     background: url(./images/bg_flower.png) no-repeat 50% 0, linear-gradient(180deg, #ccc 0%, #eee 30%, #fff 50%, #fff 100%) repeat 0 0;
     background-color: #ccc; /*background에 background-color을 주면 이미지가 추가될 때 계속 위치를 바꿔줘야할 불편함이 있음*/
-    /*이미지가 두개임 나무와 그라디언트, 나중에 선언된게 위로 옴, 이미지 없을 때 배경색 주려면 멀티이미지일 경우 나중에 선언해야 보임*/
+    /*이미지가 두개임 나무와 그라디언트, 먼저 선언된게 제일 위로 옴, 이미지 없을 때 배경색 주려면 멀티이미지일 경우 나중에 선언해야 보임*/
 }
 body *, body *::before, body *::after{
     box-sizing: border-box;
@@ -73,7 +73,6 @@ a{
     padding: 5px 0;
     position: relative;
     right: -10px;
-    
 }
 .member li{
     display: inline-block;
@@ -93,7 +92,7 @@ a{
 /* .member li{
     background-color: yellow;
 } */
-/*.member li:nth-child(n+2)::before{ 고급선택자 사용하면 내가 원하는 부분만 스타일링 가능, 두번째 부터 스타일 적용해줘
+/*.member li:nth-child(n+2)::before{ 구조 선택자 사용하면 내가 원하는 부분만 스타일링 가능, 두번째 부터 스타일 적용해줘
     content:"|";
 }*/
 /* .first::before{
@@ -156,7 +155,7 @@ a{
     left: 0;    /*position이 menu-item기준으로 영향받음*/
 }
 .sub-menu4, .sub-menu5, .sub-menu6{
-    /* display: block;     */
+    /* display: block;*/
     right: 0;
     /* left: 0;    position이 menu-item기준으로 영향받음 */
 }
@@ -168,7 +167,8 @@ a{
     padding: 10px 0 8px;
     margin-right: 5px;
 }
-/* .sub-menu a::before{
+/*
+.sub-menu a::before{
     content: '\f192';
     font-family: 'fontello';
     display: inline-block;
@@ -248,15 +248,15 @@ a{
     /* width: 500px; */
     /* display: inline-block; */
 }
+/* 메인 콘텐츠 */
 .main{
     background-color:#fff;
-    display: flex;
+    border-radius: 15px 15px 0 0;
+    display: flex;  /*float대신 flex 배치 기법 사용*/
     flex-direction: row;
     justify-content: space-between;
     padding: 30px;
-    border-radius: 15px 15px 0 0;
     min-height: 400px;
-    
     /* box-sizing: border-box; */
     /* width: 910px; */
     /* height: 60vh; */
@@ -264,9 +264,13 @@ a{
     /* overflow: hidden; */
     /* float: left; */
 }
-
 /*css관점 플로트 해제 방법 2 
 가짜로 자식 앞 뒤로 만들 수 있음*/
+/* .main::before{
+    content:"";
+    display: block;
+    clear: both;
+} */
 /* .group{
     height: 60vh;
 } */
@@ -291,9 +295,6 @@ a{
     clear: both;
 } */
 /* 로그인 */
-/* legend{
-    position: absolute;
-} */
 .login{
     background: radial-gradient(circle at right top,  #eab22e 0%,#c96226 35%,#c96226 70%,#eab22e 100%);
     border-radius: 5px;
@@ -305,7 +306,7 @@ a{
     margin: 0;
     font-size: 1.5rem;
     font-weight: 500;
-    color: yellow;
+    color: #ff0;
     /* padding-left: 10px; */
     text-indent: 10px; /*블럭요소 일때만 들여쓰기 가능, 음수 가능*/
 }
@@ -320,10 +321,9 @@ a{
     margin: 0;
     padding: 0 0 10px 0;
     border: 0;
+    border-bottom: 1px solid #aaa;
     position: relative;
     /* background-color: pink; */
-    border-bottom: 1px solid #aaa;
-
 }
 .user-pw{
     margin-top: 6px;
@@ -333,7 +333,7 @@ a{
     width: 50px;
 }
 .login-form input{
-    width: 90px;
+    width: 102px;
     height: 22px;
     padding: 1px 1px 1px 5px;
     border: 1px solid #aaa;
@@ -343,19 +343,19 @@ a{
     top: 0;
     right: 0;
     background-color: #ce4827;
-    color: #fff;
     padding: 0;
-    border:0;
+    border: 0;
+    color: #fff;
     width: 50px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 .member-service{
     background-color: #fff;
-    padding: 5px 10px;
     border-radius: 0 0 5px 5px;
-    list-style: none;
     margin: 0;
+    padding: 5px 10px;
+    list-style: none;
     display: flex;
     justify-content: space-between;
 }
@@ -373,19 +373,48 @@ a{
     list-style: none;
     padding-left: 0;
 }
-.validation-list a{
+.validation-list a{ /*li에 하면 text 왼쪽부분은 커서가 포인터로 바뀌지 않음*/
     display: block;
-    border: 1px solid #000;
-    border-radius: 20px;
-    margin: 10px;
-    padding: 7px 5px 5px 45px;
-    background:url(./images/validation_icon.png) no-repeat 20px 50%, radial-gradient(circle at right top, #ccc 0%, #eee);
-    background-color: #ccc;
     border: 1px solid #aaa;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 7px 5px 5px 40px;
+    background:url(./images/validation_icon.png) no-repeat 15px 50%, linear-gradient(180deg, #ccc, #eee);
+    background-color: #ccc;
+    font-weight: 400;
+    font-size: 1.4rem;
 }
 .validation-list a:hover{
     color: red;
 }
+/* 웹 관련 용어 */
+.term{
+    background-color: #ccc;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+/* .term-heading{
+    margin: 0;
+} */
+/* .term-list-subject{
+    float: right;
+    padding-right: 10px;
+    margin: 10px;
+    color: blue;
+
+}
+.term-list-thumbnail{
+    float:left;
+
+}
+.term-kust-bried{
+    float:right;
+
+}
+.clearfix{
+    background-color: green;
+    
+} */
 .slogan{
     /* clear: both; */
     background-color: green;
