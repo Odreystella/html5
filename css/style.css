@@ -266,7 +266,7 @@ a{
 }
 /*css관점 플로트 해제 방법 2 
 가짜로 자식 앞 뒤로 만들 수 있음*/
-/* .main::before{
+/* .main::after{
     content:"";
     display: block;
     clear: both;
@@ -389,32 +389,50 @@ a{
 }
 /* 웹 관련 용어 */
 .term{
-    background-color: #ccc;
+    background: linear-gradient(180deg, #ccc, #eee);
     margin-top: 20px;
     border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
 }
-/* .term-heading{
+.term-heading{
     margin: 0;
-} */
-/* .term-list-subject{
+    padding-bottom: 15px;
+    font-size: 1.4rem;
+}
+.term-list{
+    margin: 0;
+}
+.term-list-subject{
     float: right;
-    padding-right: 10px;
-    margin: 10px;
+    padding-left: 5px;
+    margin: 0;
     color: blue;
-
+    width: 145px;
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 .term-list-thumbnail{
     float:left;
-
+    margin: 0;
 }
-.term-kust-bried{
-    float:right;
-
+.term-list-brief{
+    position: absolute;
+    right: 10px;;
+    bottom: 5px;
+    margin: 0;
+    width: 145px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
 }
-.clearfix{
-    background-color: green;
-    
-} */
+.term::after{
+    content:"";
+    display:block;
+    clear:both;    
+}
 .slogan{
     /* clear: both; */
     background-color: green;
