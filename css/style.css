@@ -433,6 +433,44 @@ a{
     display:block;
     clear:both;    
 } 
+/* 검색 폼 */
+.search-form{
+    border-radius: 15px 15px 0 0;
+    border: 1px solid #aaa;
+    border-bottom-color: #fff;
+    padding: 15px 25px 10px;
+    margin: 0;
+    background: #ccc linear-gradient(180deg, #ccc, #fff);
+}
+.search-form fieldset{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.search-form .flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-form label{
+    padding-top: 3px;
+}
+.search-form input{
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    padding: 1px 1px 1px 5px;
+    width: 200px;
+    height: 22px;
+}
+.btn-search{
+    color: #fff;
+    background-color: #212121;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 3px 10px;
+    height: 22px;
+    font-size: 1.1rem;
+}
 .slogan{
     /* clear: both; */
     background-color: green;
