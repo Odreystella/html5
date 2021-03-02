@@ -471,6 +471,89 @@ a{
     height: 22px;
     font-size: 1.1rem;
 }
+/* flex 박스 배치 테스트- flex일 때 가상요소 사용하면 content=""때문에 정렬에 영향이 있음*/
+
+/* .group3{
+    display:flex;
+    justify-content: space-between; 
+    background-color:yellow;
+}
+.group3::before{
+    content:"";
+}
+.group3 span{
+    border: 1px solid red;
+}
+.group3 span:nth-child(n+2){
+    margin-left: auto;
+} */
+/* 공지사항 및 자료실 게시판 */
+.board{
+    /* background-color: yellow; */
+    position: relative;
+    padding-top: 45px;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+.notice-list, .notice-more, .pds-list, .pds-more{
+    display: none;
+}
+.tab-act .notice-list, .tab-act .notice-more,
+.tab-act .pds-list, .tab-act .pds-more{
+    display: block;
+}
+.tab{
+    margin: 0;
+    position: absolute;
+    top: 0;
+    border: 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    background:#ccc linear-gradient(180deg, #ccc, #eee);
+    font-size: 1.4rem;
+    font-weight: normal;
+    color:#666;
+    padding: 5px 10px 8px;
+    cursor: pointer;
+}
+.tab-act .tab{
+    color: #ce4827;
+    background: #fff;
+    border-color: #ce4827 #ce4827 #fff #ce4827;
+}
+.notice-heading{
+    left: 0;
+}
+.pds-heading{
+    left: 73px;
+}
+.notice-list, .pds-list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    /* background-color: skyblue; */
+}
+.notice-list li, .pds-list li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+}
+.notice-list a, .pds-list a{
+    /* background-color: green; */
+    /* flex-grow: 1; */
+    text-overflow: ellipsis;   /*말 줄임표 하고 싶을 때 이래 세개가 셋트*/
+    white-space: nowrap;
+    overflow: hidden;   /*아래 280 너비가 넘으면 내용 슴겨줘*/
+    width: 300px;
+}
+.notice-more, .pds-more{   /* .board > section > a */
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+.board .icon-plus::before{
+    color: hsla(110,50%,30%,1)
+}
 .slogan{
     /* clear: both; */
     background-color: green;
