@@ -605,7 +605,7 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    text-align: center;
+    text-align: center; /*figcaption 정렬*/
 }
 .news-item-thumbnail img{
     display: block;
