@@ -621,6 +621,79 @@ a{
 .icon-plus::before{
     color:hsla(110,50%,30%,1); /*색상환 차트 색, 채도, 명도, 불투명도*/
 }
+/* 신규이벤트 및 관련 사이트 */
+.gradient-box{
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #ccc linear-gradient(180deg, #ccc, #eee);
+    padding: 10px;
+}
+.point-color{
+    color: var(--primary-color);
+}
+.drop-shadow{
+    display: inline-block;
+    border: 1px solid #aaa;
+    box-shadow: 5px 5px 0 0 #aaa;
+}
+.event-heading, .related-heading{
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+.event{
+    position: relative;
+    border-bottom: 1px solid #999;
+}
+.event img{
+    /* display: block; 도 가능*/
+    /* img는 inline요소라 baseline아래 descender영역이 있음 */
+    vertical-align: top;
+}
+.event-brief{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+.event-brief em{
+    font-style: normal;
+    display: block;
+}
+.btn-event{
+    position: absolute;
+    top:0;
+    right: 0;  
+    height: 18px;
+    overflow: hidden;
+    cursor:pointer; 
+}  
+.btn-event-prev, .btn-event-next{ 
+    /*.btn-event button으로 선택하면 border-box여도 button특성 상 w/h+b+p됨*/
+    /* 그래서 padding trick쓰려고 하면 파이어폭스에서 오류 */
+    /*.btn-event button(21점)으로 선택하면 구체성이 .btn-event-next(20점)보다 높아서 뒤 화살표 안보임*/
+    border: 0;
+    width: 19px;
+    padding: 18px 0 0 0;
+    /* height: 0; */
+    /* overflow: hidden;  */
+    background-color: transparent;
+    background-image: url(./images/back_forward.png);
+    background-repeat: no-repeat;
+    /* background: url(./images/back_forward.png) no-repeat; */
+}
+.btn-event-next{
+    background-position: -36px 0;
+}
+.related{
+    background-color: pink;
+    margin-top: 10px;
+}
+/* .related-list{
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+} */
+/* 슬로건 */
 .slogan{
     /* clear: both; */
     background-color: green;
