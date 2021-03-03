@@ -823,5 +823,49 @@ a{
 }
 .footer-content{
     background-color: pink;
-    height: 10vh;
+    display: grid;
+    grid-template-columns: 140px 1fr 100px;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-areas: "logo guide     badge"
+                         "logo address   badge"
+                         "logo copyright badge";
+}
+/* .footer-logo{
+    background-color: salmon;
+    grid-area: 1 / 1 / 4 / 2;
+}
+.address{
+    background-color: lime;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 3;
+}
+.copyright{
+    background-color: skyblue;
+    grid-area: 3 / 2 / 4 / 3;
+}
+.badge{
+    background-color: teal;
+    grid-area: 1 / 3 / 4 / 4;
+} */
+.footer-logo{
+    grid-area: logo;
+    background-color: salmon;
+}
+.guide{
+    grid-area: guide;
+    background-color: lime;
+}
+.address{
+    grid-area: address;
+    background-color: skyblue;
+}
+.copyright{
+    grid-area: copyright;
+    background-color: yellow;
+}
+.badge{
+    grid-area: badge;
+    background-color: teal;
 }
